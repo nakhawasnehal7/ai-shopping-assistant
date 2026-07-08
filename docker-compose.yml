@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: shopping-postgres
+    environment:
+      POSTGRES_DB: shopping
+      POSTGRES_USER: shopping_user
+      POSTGRES_PASSWORD: shopping_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - shopping_pg_data:/var/lib/postgresql/data
+
+volumes:
+  shopping_pg_data:
